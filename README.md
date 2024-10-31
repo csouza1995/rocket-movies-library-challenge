@@ -1,4 +1,4 @@
-# Bookwise
+# AB Movies
 
 Following the instructions from Rocketseat's PHP training I created this system of Movies Library\
 It are a project challenger that I made following a Figma instructions and without instructor help
@@ -7,7 +7,7 @@ It are a project challenger that I made following a Figma instructions and witho
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Alpine.js](https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0)\
-[![wakatime](https://wakatime.com/badge/user/435e55fb-0356-4dac-9f26-0e167b1feaf4/project/fe728e98-dcbe-4a94-9aa6-bea509e01cfc.svg)](https://wakatime.com/badge/user/435e55fb-0356-4dac-9f26-0e167b1feaf4/project/fe728e98-dcbe-4a94-9aa6-bea509e01cfc)
+[![wakatime](https://wakatime.com/badge/user/435e55fb-0356-4dac-9f26-0e167b1feaf4/project/fe188b60-577f-4e82-8f99-36d90c033d8e.svg)](https://wakatime.com/badge/user/435e55fb-0356-4dac-9f26-0e167b1feaf4/project/fe188b60-577f-4e82-8f99-36d90c033d8e)
 
 ## Structure
 

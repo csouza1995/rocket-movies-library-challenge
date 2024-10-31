@@ -12,6 +12,7 @@ require ROOT . "/storage/Storage.php";
 require ROOT . "/validators/Validator.php";
 
 // models
+require ROOT . "/models/User.php";
 
 Session::start();
 

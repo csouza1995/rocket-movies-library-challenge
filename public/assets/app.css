@@ -1,0 +1,24 @@
+
+/* font Rammetto One from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+@font-face {
+    font-family: 'Rammetto One', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* font Rajdhani from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@font-face {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* font Nunito Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@font-face {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}

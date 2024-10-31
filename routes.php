@@ -11,4 +11,8 @@ if (!file_exists(ROOT . "/controllers/{$controller}.controller.php")) {
     abort(404);
 }
 
+// appoint the route to nav styles
+$route = $controller;
+
+// include the controller
 require ROOT . "/controllers/{$controller}.controller.php";
