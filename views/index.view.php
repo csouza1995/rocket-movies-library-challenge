@@ -1,19 +1,29 @@
-<section class="flex justify-between items-center text-gray-600 my-20">
+<section class="flex justify-between items-center text-gray-600 my-20 w-full">
     <!-- titlw -->
     <h1 class="font-display text-4xl">
         Explorer
     </h1>
 
     <!-- search -->
-    <form method="get">
-        <div class="flex items-center text-gray-500 border border-gray-400 rounded-lg px-4 py-1 w-96">
+    <form method="get" action="/" x-data="{ search: '<?= $_GET['search'] ?? '' ?>' }">
+        <div class="flex items-center text-gray-500 border border-gray-400 rounded-lg px-4 py-1 w-[500px] max-w-full">
             <i class='bx bx-search text-xl'></i>
 
             <input
                 type="text"
                 name="search"
-                placeholder="Search for movies"
-                class="px-4 py-2 rounded-lg bg-gray-100 focus:outline-none placeholder-gray-500">
+                x-model="search"
+                placeholder="Search for movies, press enter to confirm"
+                class="px-4 py-2 rounded-lg bg-gray-100 focus:outline-none placeholder-gray-500 w-full">
+
+            <!-- clear -->
+            <button
+                x-show="search.length > 0"
+                x-on:click="search = ''"
+                type="button"
+                class="hover:text-purple-light flex items-center rounded-lg">
+                <i class='bx bxs-x-circle text-2xl'></i>
+            </button>
         </div>
     </form>
 </section>
@@ -35,12 +45,10 @@
                     Clear search
                 </span>
             </button>
-
         </div>
     <?php else: ?>
         <?php foreach ($movies as $movie) : ?>
-            <div
-                class="flex flex-col bg-gray-100 rounded-lg overflow-hidden relative h-[450px] relative">
+            <div class="flex flex-col bg-gray-100 border border-transparent rounded-lg overflow-hidden relative h-[450px] relative hover:border-gray-700 hover:opacity-70 hover:scale-110 cursor-pointer">
 
                 <!-- image -->
                 <div class="absolute opacity-50 top-0 left-0 w-full h-full">
