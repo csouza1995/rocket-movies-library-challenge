@@ -18,6 +18,6 @@ return new class extends MigrationBase
 
     public function down()
     {
-        $this->db->exec("DROP TABLE IF EXISTS users");
+        $this->db->exec("DROP TABLE IF EXISTS movies");
     }
 };

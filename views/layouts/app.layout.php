@@ -9,7 +9,7 @@
                 <i class='bx bx-grid-alt text-xl mr-2'></i>
                 Explorer
             </a>
-            <a href="/my-movies" class="flex items-center px-4 py-2 rounded-lg hover:text-purple-light hover:bg-gray-300 <?= $route === '/my-movies' ? 'bg-gray-300 text-purple-light' : ''; ?>">
+            <a href="/my-movies" class="flex items-center px-4 py-2 rounded-lg hover:text-purple-light hover:bg-gray-300 <?= $route === 'my-movies' ? 'bg-gray-300 text-purple-light' : ''; ?>">
                 <i class='bx bx-movie-play text-xl mr-2'></i>
                 My Movies
             </a>
@@ -20,7 +20,7 @@
                 <!-- user name and profile -->
                 <div class="flex items-center space-x-4">
                     <span>
-                        Olá, <?= auth()->fullname(); ?>
+                        Hi, <?= auth()->fullname(); ?>
                     </span>
                     <img src="<?= auth()->avatar(); ?>" alt="avatar" class="size-10 rounded ml-2">
                 </div>

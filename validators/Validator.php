@@ -229,4 +229,20 @@ class Validator
             );
         }
     }
+
+    private function in($field, $data, $attributes, ...$ruleValues)
+    {
+        if (!isset($data[$field]) || strlen($data[$field]) === 0) {
+            return;
+        }
+
+        if (!in_array($data[$field], $ruleValues)) {
+            $this->addError(
+                $field,
+                'in',
+                'Field :attribute must be one of the following: :rule',
+                $attributes
+            );
+        }
+    }
 }
