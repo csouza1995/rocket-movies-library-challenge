@@ -56,7 +56,9 @@
             <div class="bg-rating top-2 right-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white">
                 <!-- raiting -->
                 <div class="font-bold text-lg mr-1">
-                    <span>4,5</span>
+                    <span>
+                        <?= number_format($movie->rating, 1); ?>
+                    </span>
                     <span class="text-gray-600 text-xs">/5</span>
                 </div>
 
