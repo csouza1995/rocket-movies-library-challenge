@@ -59,4 +59,7 @@ $movies = $database->query(
 )
     ->fetchAll();
 
-view('my-movies', compact('movies'));
+view('my-movies', [
+    'movies' => $movies,
+    'form_control' => true
+]);

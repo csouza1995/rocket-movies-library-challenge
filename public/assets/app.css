@@ -22,3 +22,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.show-parent-hover {
+    display: none;
+}
+.parent-hover:hover .show-parent-hover {
+    display: grid;
+}

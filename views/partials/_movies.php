@@ -24,26 +24,33 @@
 
             <!-- image -->
             <div class="absolute opacity-50 top-0 left-0 w-full h-full">
-                <img src="<?= $movie->poster; ?>" alt="<?= $movie->title; ?>" class="w-full h-full object-cover">
+                <img src="<?= $movie->getImage(); ?>" alt="<?= $movie->title; ?>" class="w-full h-full object-cover">
             </div>
 
             <!-- actions -->
-            <form method="post" action="/my-movies">
-                <input type="hidden" name="movie_id" value="<?= $movie->id; ?>">
-                <?php if ($movie->is_my_movie) : ?>
-                    <!-- remove -->
-                    <input type="hidden" name="action" value="remove">
-                    <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-red-500">
-                        <i class='bx bxs-trash text-xl'></i>
-                    </button>
-                <?php else : ?>
-                    <!-- add -->
-                    <input type="hidden" name="action" value="add">
-                    <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-green-500">
-                        <i class='bx bxs-plus-circle text-xl'></i>
-                    </button>
-                <?php endif; ?>
-            </form>
+            <?php if ($form_control ?? false) : ?>
+                <a class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-blue-500" href="/movies-form?id=<?= $movie->id; ?>">
+                    <i class='bx bxs-edit text-xl'></i>
+                </a>
+            <?php else : ?>
+                <form method="post" action="/my-movies">
+                    <input type="hidden" name="movie_id" value="<?= $movie->id; ?>">
+
+                    <?php if ($movie->is_my_movie) : ?>
+                        <!-- remove -->
+                        <input type="hidden" name="action" value="remove">
+                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-red-500">
+                            <i class='bx bxs-trash text-xl'></i>
+                        </button>
+                    <?php else : ?>
+                        <!-- add -->
+                        <input type="hidden" name="action" value="add">
+                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-green-500">
+                            <i class='bx bxs-plus-circle text-xl'></i>
+                        </button>
+                    <?php endif; ?>
+                </form>
+            <?php endif; ?>
 
             <!-- rating -->
             <div class="bg-rating top-2 right-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white">
