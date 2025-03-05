@@ -1,7 +1,7 @@
 <div
     x-data="{ 
         search: '<?= $_GET['search'] ?? '' ?>', 
-        clearSearch: () => { this.search = ''; location.href = '/' } 
+        clearSearch: () => { this.search = ''; location.href = '/my-movies' }
     }">
     <section class="flex justify-between items-center text-gray-600 my-20 w-full">
         <!-- title -->
@@ -10,7 +10,7 @@
         </h1>
 
         <!-- search -->
-        <form method="get" action="/">
+        <form method="get" action="/my-movies" class="flex items-center">
             <div class="flex items-center text-gray-500 border border-gray-400 rounded-lg px-4 py-1 w-[500px] max-w-full">
                 <i class='bx bx-search text-xl'></i>
 
@@ -30,6 +30,12 @@
                     <i class='bx bxs-x-circle text-2xl'></i>
                 </button>
             </div>
+
+            <!-- create -->
+            <a href="/movies-form" class="flex items-center bg-purple-base text-white font-semibold rounded-lg px-4 py-2 ml-4 hover:bg-purple-light">
+                <i class='bx bx-plus text-xl mr-2'></i>
+                Add Movie
+            </a>
         </form>
     </section>
 

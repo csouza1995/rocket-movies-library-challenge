@@ -23,4 +23,22 @@ VALUES
         'Brown',
         'bob.brown@emaii.com',
         '$2y$10$1Q7'
+    ),
+    (
+        'Charlie',
+        'White',
+        'charlie.white@email.com',
+        '$2y$10$1Q7'
+    ),
+    (
+        'David',
+        'Black',
+        'david.black@email.com',
+        '$2y$10$1Q7'
+    ),
+    (
+        'Eve',
+        'Green',
+        'eve.green@email.com',
+        '$2y$10$1Q7'
     );

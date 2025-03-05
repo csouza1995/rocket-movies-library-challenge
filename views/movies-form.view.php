@@ -27,7 +27,7 @@
                 class="bg-gray-300 flex items-center justify-center h-[600px] w-full rounded-3xl text-purple-base hover:bg-gray-400 hover:text-purple-light cursor-pointer parent-hover"
                 x-on:click="$refs.poster.click()">
 
-                <img :src="image" x-show="image" class="h-full rounded-3xl opacity-50" style="overflow: hidden; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.5)" />
+                <img :src="image" x-show="image" class="h-full rounded-3xl opacity-50" style="overflow: hidden; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.5); min-width: 100%;" />
 
                 <div class="show-parent-hover text-center grid absolute" :class="{ 'hidden': image }">
                     <i class="bx bx-upload text-6xl"></i>
@@ -40,7 +40,7 @@
 
         <!-- grid 2/3 -->
         <div class="col-span-1 md:col-span-2">
-            <p class="font-title text-lg font-bold mb-6">
+            <p class="font-title text-2xl font-bold mb-6">
                 Movie information
             </p>
 
@@ -116,7 +116,7 @@
                 <button
                     type="button"
                     x-on:click="window.history.back()"
-                    class="text-gray-500 hover:text-purple-light text-sm px-4 py-2 rounded-lg mt-6 hover:border-purple-light border mr-4">
+                    class="text-gray-500 hover:text-purple-light text-sm px-4 py-2 rounded-lg mt-6 mr-4">
                     Cancel
                 </button>
                 <button

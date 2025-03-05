@@ -1,7 +1,7 @@
 <div
     x-data="{ 
         search: '<?= $_GET['search'] ?? '' ?>', 
-        clearSearch: () => { this.search = ''; location.href = '/' } 
+        clearSearch: () => { this.search = ''; location.href = '/my-favorites' }
     }">
     <section class="flex justify-between items-center text-gray-600 my-20 w-full">
         <!-- title -->
@@ -10,7 +10,7 @@
         </h1>
 
         <!-- search -->
-        <form method="get" action="/">
+        <form method="GET" action="/my-favorites">
             <div class="flex items-center text-gray-500 border border-gray-400 rounded-lg px-4 py-1 w-[500px] max-w-full">
                 <i class='bx bx-search text-xl'></i>
 

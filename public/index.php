@@ -14,6 +14,7 @@ require ROOT . "/validators/Validator.php";
 // models
 require ROOT . "/models/User.php";
 require ROOT . "/models/Movie.php";
+require ROOT . "/models/Review.php";
 
 Session::start();
 

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $genre = $_POST['genre'];
     $year = $_POST['year'];
     $description = $_POST['description'];
+    $user_id = auth()->id;
 
     $poster = null;
     if ($_FILES['poster'] && $_FILES['poster']['name']) {
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($id) {
         $database->query(
-            'UPDATE movies SET title = :title, genre = :genre, year = :year, description = :description, poster = :poster WHERE id = :id',
+            'UPDATE movies SET title = :title, genre = :genre, year = :year, description = :description, poster = :poster, user_id = :user_id WHERE id = :id',
             [
                 'id' => $id,
                 'title' => $title,
@@ -70,17 +71,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'year' => $year,
                 'description' => $description,
                 'poster' => $poster,
+                'user_id' => $user_id,
             ]
         );
     } else {
         $database->query(
-            'INSERT INTO movies (title, genre, year, description, poster) VALUES (:title, :genre, :year, :description, :poster)',
+            'INSERT INTO movies (title, genre, year, description, poster, user_id) VALUES (:title, :genre, :year, :description, :poster, :user_id)',
             [
                 'title' => $title,
                 'genre' => $genre,
                 'year' => $year,
                 'description' => $description,
                 'poster' => $poster,
+                'user_id' => $user_id,
             ]
         );
     }

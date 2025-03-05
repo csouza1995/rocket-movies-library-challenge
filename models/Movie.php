@@ -16,9 +16,10 @@ class Movie
         return $database
             ->query(
                 "SELECT 
-                    movies.*
+                    movies.*, 
+                    COUNT(reviews.id) as review_count
                 FROM movies 
-                -- LEFT JOIN reviews ON movies.id = reviews.movie_id
+                LEFT JOIN reviews ON movies.id = reviews.movie_id
                 WHERE " . implode(" AND ", $where) . " 
                 GROUP BY movies.id 
                 ORDER BY $order",

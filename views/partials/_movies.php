@@ -11,7 +11,7 @@
         <button
             type="button"
             class="px-4 py-2 hover:text-purple-light flex items-center mx-auto mt-4 rounded-lg"
-            x-on:click="clearSearch">
+            x-on:click.stop="clearSearch">
             <i class='bx bx-x text-3xl'></i>
             <span class="ml-2 text-lg">
                 Clear search
@@ -20,7 +20,7 @@
     </div>
 <?php else: ?>
     <?php foreach ($movies as $movie) : ?>
-        <div class="flex flex-col bg-gray-100 border border-transparent rounded-lg overflow-hidden relative h-[450px] relative hover:border-gray-700 hover:opacity-70 cursor-pointer">
+        <div x-on:click.stop="location.href = '/movie?id=<?= $movie->id; ?>'" class="flex flex-col bg-gray-100 border border-transparent rounded-lg overflow-hidden relative h-[450px] relative hover:border-gray-700 hover:opacity-70 cursor-pointer">
 
             <!-- image -->
             <div class="absolute opacity-50 top-0 left-0 w-full h-full">
@@ -39,13 +39,13 @@
                     <?php if ($movie->is_my_movie) : ?>
                         <!-- remove -->
                         <input type="hidden" name="action" value="remove">
-                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-red-500 hover:text-gray-600 border border-transparent hover:border-gray-600">
+                        <button x-on:click.stop class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-red-500 hover:text-gray-600 border border-transparent hover:border-gray-600">
                             <i class='bx bxs-heart text-xl'></i>
                         </button>
                     <?php else : ?>
                         <!-- add -->
                         <input type="hidden" name="action" value="add">
-                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-gray-600 hover:text-red-500 border border-transparent hover:border-red-500">
+                        <button x-on:click.stop class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-gray-600 hover:text-red-500 border border-transparent hover:border-red-500">
                             <i class='bx bxs-heart text-xl'></i>
                         </button>
                     <?php endif; ?>
