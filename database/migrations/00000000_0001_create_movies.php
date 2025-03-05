@@ -11,8 +11,11 @@ return new class extends MigrationBase
             year INTEGER,
             poster VARCHAR(255),
             description TEXT,
+            user_id INTEGER,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            
+            FOREIGN KEY (user_id) REFERENCES users(id)
         )");
     }
 

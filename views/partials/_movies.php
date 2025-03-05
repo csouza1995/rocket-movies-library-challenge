@@ -29,24 +29,24 @@
 
             <!-- actions -->
             <?php if ($form_control ?? false) : ?>
-                <a class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-blue-500" href="/movies-form?id=<?= $movie->id; ?>">
+                <a class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-purple-light" href="/movies-form?id=<?= $movie->id; ?>">
                     <i class='bx bxs-edit text-xl'></i>
                 </a>
             <?php else : ?>
-                <form method="post" action="/my-movies">
+                <form method="post" action="/my-favorites">
                     <input type="hidden" name="movie_id" value="<?= $movie->id; ?>">
 
                     <?php if ($movie->is_my_movie) : ?>
                         <!-- remove -->
                         <input type="hidden" name="action" value="remove">
-                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-red-500">
-                            <i class='bx bxs-trash text-xl'></i>
+                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-red-500 hover:text-gray-600 border border-transparent hover:border-gray-600">
+                            <i class='bx bxs-heart text-xl'></i>
                         </button>
                     <?php else : ?>
                         <!-- add -->
                         <input type="hidden" name="action" value="add">
-                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-white hover:bg-green-500">
-                            <i class='bx bxs-plus-circle text-xl'></i>
+                        <button class="top-2 left-2 px-2 py-1 rounded-full absolute flex items-center space-x-1 text-gray-600 hover:text-red-500 border border-transparent hover:border-red-500">
+                            <i class='bx bxs-heart text-xl'></i>
                         </button>
                     <?php endif; ?>
                 </form>

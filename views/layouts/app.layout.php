@@ -9,6 +9,10 @@
                 <i class='bx bx-grid-alt text-xl mr-2'></i>
                 Explorer
             </a>
+            <a href="/my-favorites" class="flex items-center px-4 py-2 rounded-lg hover:text-purple-light hover:bg-gray-300 <?= $route === 'my-favorites' ? 'bg-gray-300 text-purple-light' : ''; ?>">
+                <i class='bx bx-heart text-xl mr-2'></i>
+                Favorites
+            </a>
             <a href="/my-movies" class="flex items-center px-4 py-2 rounded-lg hover:text-purple-light hover:bg-gray-300 <?= $route === 'my-movies' ? 'bg-gray-300 text-purple-light' : ''; ?>">
                 <i class='bx bx-movie-play text-xl mr-2'></i>
                 My Movies
